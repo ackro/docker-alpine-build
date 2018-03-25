@@ -3,4 +3,4 @@
 #
 FROM alpine
 
-RUN apk add --no-cache autoconf automake binutils build-base file libtool m4 vim
+RUN apk add --no-cache autoconf automake binutils build-base file libtool m4
