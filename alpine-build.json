@@ -1,0 +1,25 @@
+{
+  "builders": [
+    {
+      "type": "docker",
+      "image": "alpine",
+      "run_command": ["-d", "-i", "-t", "{{.Image}}", "/bin/sh"],
+      "commit": true
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "shell",
+      "inline": ["apk add --no-cache autoconf automake binutils build-base file libtool make m4"]
+    }
+  ],
+  "post-processors": [
+    [
+      {
+        "type": "docker-tag",
+        "repository": "hub.ackro.net/alpine-build",
+        "tag": "latest"
+      }
+    ]
+  ]
+}
