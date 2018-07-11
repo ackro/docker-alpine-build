@@ -10,7 +10,9 @@
   "provisioners": [
     {
       "type": "shell",
-      "inline": ["apk add --no-cache autoconf automake binutils build-base file libtool make m4"]
+      "inline": [
+        "apk add --no-cache autoconf automake binutils build-base file libtool make m4 python3"
+      ]
     }
   ],
   "post-processors": [
